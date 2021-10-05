@@ -5,9 +5,9 @@
     <body>
       <script>
         let timer;
-        let timeout = 500;
-	const classNames = ['short', 'tall', 'taller', 'tallest'];
-        const wordToHex = {
+        let timeout = 500; // delay time
+	const classNames = ['short', 'tall', 'taller', 'tallest']; // grid row span
+        const wordToHex = { // color codes
           aliceblue: '#F0F8FF',
           antiquewhite: '#FAEBD7',
           aqua: '#00FFFF',
@@ -158,14 +158,13 @@
           yellowgreen: '#9ACD32',
         };
         function getRandomArbitrary(min, max) {
-    		return Math.floor(Math.random() * (max - min) + min);
+    	  return Math.floor(Math.random() * (max - min) + min); // Dynamically allocate number within the given range
 	}
         let randomClassName = () => {
-          return classNames[getRandomArbitrary(0, classNames.length-1)];
+          return classNames[getRandomArbitrary(0, classNames.length-1)]; // pick up random span size in grid
         };
         let formMasonry = (searchList) => {
-          let masonryContainer =
-            document.getElementsByClassName('masonry-container')[0];
+          let masonryContainer = document.getElementsByClassName('masonry-container')[0];
           masonryContainer.innerHTML = '';
           masonryContainer.children = [];
           for (let index = 0; index < searchList.length; index++) {
@@ -181,8 +180,7 @@
           }
         };
         let findColorCodes = () => {
-          let searchText =
-            document.getElementsByName('searchColorCode')[0].value;
+          let searchText = document.getElementsByName('searchColorCode')[0].value;
           let noResultsFound = true;
           let searchList = [];
           if (searchText.length) {
@@ -193,13 +191,7 @@
               }
             });
           }
-          if (noResultsFound && searchText.length) {
-            document.getElementsByClassName('no-results')[0].className =
-              'no-results';
-          } else {
-            document.getElementsByClassName('no-results')[0].className =
-              'no-results display-none';
-          }
+          document.getElementsByClassName('no-results')[0].className = noResultsFound && searchText.length ? 'no-results' : 'no-results display-none';
           formMasonry(searchList);
         };
         function debounceSearchText() {
@@ -213,9 +205,8 @@
         <h1>Color Code Finder Tool (in Hex)</h1>
 	<div class="search-wrapper">
 	<form>
-		<input type="text" name="searchColorCode" required class="search-box" onkeyup="debounceSearchText()"
-          	autofocus placeholder="Search color name" />
-		<button class="close-icon" onclick="debounceSearchText()" type="reset"></button>
+	  <input type="text" name="searchColorCode" required class="search-box" onkeyup="debounceSearchText()" autofocus placeholder="Search color name" />
+	  <button class="close-icon" onclick="debounceSearchText()" type="reset"></button>
 	</form>
 	</div>
         <section>
@@ -258,7 +249,7 @@
 	}
 
 	#color-code-finder .tall {
-  	 grid-row: span 4;
+  	  grid-row: span 4;
 	}
 
 	#color-code-finder .taller {
@@ -269,56 +260,56 @@
   	  grid-row: span 6;
 	}
 	#color-code-finder .search-box,.close-icon,.search-wrapper {
-		position: relative;
-		padding: 10px;
+	  position: relative;
+	  padding: 10px;
 	}
 	#color-code-finder .search-wrapper {
-	        width: 400px;
-		margin: auto;
+	  width: 400px;
+	  margin: auto;
 	}
 	#color-code-finder .search-box {
-		width: 80%;
-		border: 1px solid #ccc;
-  	outline: 0;
-  	border-radius: 15px;
-	display: inline-block;
-	margin: 0 auto;
+	  width: 80%;
+	  border: 1px solid #ccc;
+  	  outline: 0;
+  	  border-radius: 15px;
+	  display: inline-block;
+	  margin: 0 auto;
 	}
 	#color-code-finder .search-box:focus {
-		box-shadow: 0 0 15px 5px #b0e0ee;
-		border: 2px solid #bebede;
+	  box-shadow: 0 0 15px 5px #b0e0ee;
+	  border: 2px solid #bebede;
 	}
 	#color-code-finder .close-icon {
-		border:1px solid transparent;
-		background-color: transparent;
-		display: inline-block;
-		vertical-align: middle;
-  		outline: 0;
-  		cursor: pointer;
+	  border: 1px solid transparent;
+	  background-color: transparent;
+	  display: inline-block;
+	  vertical-align: middle;
+  	  outline: 0;
+  	  cursor: pointer;
 	}
 	#color-code-finder .close-icon:after {
-		content: "X";
-		display: block;
-		width: 15px;
-		height: 15px;
-		position: absolute;
-		background-color: #d94518;
-		z-index:1;
-		right: 35px;
-		top: 0;
-		bottom: 0;
-		margin: auto;
-		padding: 2px;
-		border-radius: 50%;
-		text-align: center;
-		color: white;
-		font-weight: normal;
-		font-size: 12px;
-		box-shadow: 0 0 2px #d94518;
-		cursor: pointer;
+	  content: "X";
+	  display: block;
+	  width: 15px;
+	  height: 15px;
+	  position: absolute;
+	  background-color: #d94518;
+	  z-index:1;
+	  right: 35px;
+	  top: 0;
+	  bottom: 0;
+	  margin: auto;
+	  padding: 2px;
+	  border-radius: 50%;
+	  text-align: center;
+	  color: white;
+	  font-weight: normal;
+	  font-size: 12px;
+	  box-shadow: 0 0 2px #d94518;
+	  cursor: pointer;
 	}
 	#color-code-finder .search-box:not(:valid) ~ .close-icon {
-		display: none;
+	  display: none;
 	}
     </style>
   </head>
