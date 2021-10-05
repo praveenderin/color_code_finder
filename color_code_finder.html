@@ -213,46 +213,46 @@
         <h1>Color Code Finder Tool (in Hex)</h1>
 	<div class="search-wrapper">
 	<form>
-	<input type="text" name="searchColorCode" required class="search-box" onkeyup="debounceSearchText()"
-          autofocus placeholder="Search color name" />
+		<input type="text" name="searchColorCode" required class="search-box" onkeyup="debounceSearchText()"
+          	autofocus placeholder="Search color name" />
 		<button class="close-icon" onclick="debounceSearchText()" type="reset"></button>
 	</form>
 	</div>
         <section>
-          <div class="no-results display-none">No result(s) found. Please refer readMe.doc and enter valid input to list color codes</div>
+          <div class="no-results display-none">No result(s) found. Please enter valid input to list color codes</div>
           <div class="masonry-container"></div>
         </section>
       </div>
     </body>
     <style>
-      body {
-        font: 1.1em Lato, sans-serif;
-      }
-      h1 {
-        font-family: Lato;
-	text-align: center;
-      }
-      #color-code-finder .no-results {
-        margin-top: 10px;
-        text-align: center;
-      }
-      #color-code-finder .display-none {
-        display: none;
-      }
-      #color-code-finder .masonry-container {
-        display: grid;
-  	grid-auto-rows: 50px;
-  	grid-gap: 10px;
-  	grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
-        margin-top: 10px;
-      }
-      #color-code-finder .grid-item {
-        display: flex;
-  	align-items: center;
-  	justify-content: center;
-  	font-size: 1.3em;
-  	font-weight: bold;
-      }
+        body {
+          font: 1.1em Lato, sans-serif;
+        }
+        h1 {
+          font-family: Lato;
+	  text-align: center;
+        }
+        #color-code-finder .no-results {
+          margin-top: 10px;
+          text-align: center;
+        }
+        #color-code-finder .display-none {
+          display: none;
+        }
+        #color-code-finder .masonry-container {
+          display: grid;
+  	  grid-auto-rows: 50px;
+  	  grid-gap: 10px;
+  	  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+          margin-top: 10px;
+        }
+        #color-code-finder .grid-item {
+          display: flex;
+  	  align-items: center;
+  	  justify-content: center;
+  	  font-size: 1.3em;
+  	  font-weight: bold;
+        }
 	#color-code-finder .short {
   	  grid-row: span 3;
 	}
@@ -262,64 +262,64 @@
 	}
 
 	#color-code-finder .taller {
-  	grid-row: span 5;
+  	  grid-row: span 5;
 	}
 
 	#color-code-finder .tallest {
-  	grid-row: span 6;
+  	  grid-row: span 6;
 	}
 	#color-code-finder .search-box,.close-icon,.search-wrapper {
 		position: relative;
 		padding: 10px;
 	}
-#color-code-finder .search-wrapper {
-	width: 400px;
-	margin: auto;
-}
-#color-code-finder .search-box {
-	width: 80%;
-	border: 1px solid #ccc;
-  outline: 0;
-  border-radius: 15px;
-display: inline-block;
-margin: 0 auto;
-}
-#color-code-finder .search-box:focus {
-	box-shadow: 0 0 15px 5px #b0e0ee;
-	border: 2px solid #bebede;
-}
-#color-code-finder .close-icon {
-	border:1px solid transparent;
-	background-color: transparent;
+	#color-code-finder .search-wrapper {
+	        width: 400px;
+		margin: auto;
+	}
+	#color-code-finder .search-box {
+		width: 80%;
+		border: 1px solid #ccc;
+  	outline: 0;
+  	border-radius: 15px;
 	display: inline-block;
-	vertical-align: middle;
-  outline: 0;
-  cursor: pointer;
-}
-#color-code-finder .close-icon:after {
-	content: "X";
-	display: block;
-	width: 15px;
-	height: 15px;
-	position: absolute;
-	background-color: #d94518;
-	z-index:1;
-	right: 35px;
-	top: 0;
-	bottom: 0;
-	margin: auto;
-	padding: 2px;
-	border-radius: 50%;
-	text-align: center;
-	color: white;
-	font-weight: normal;
-	font-size: 12px;
-	box-shadow: 0 0 2px #d94518;
-	cursor: pointer;
-}
-#color-code-finder .search-box:not(:valid) ~ .close-icon {
-	display: none;
-}
+	margin: 0 auto;
+	}
+	#color-code-finder .search-box:focus {
+		box-shadow: 0 0 15px 5px #b0e0ee;
+		border: 2px solid #bebede;
+	}
+	#color-code-finder .close-icon {
+		border:1px solid transparent;
+		background-color: transparent;
+		display: inline-block;
+		vertical-align: middle;
+  		outline: 0;
+  		cursor: pointer;
+	}
+	#color-code-finder .close-icon:after {
+		content: "X";
+		display: block;
+		width: 15px;
+		height: 15px;
+		position: absolute;
+		background-color: #d94518;
+		z-index:1;
+		right: 35px;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		padding: 2px;
+		border-radius: 50%;
+		text-align: center;
+		color: white;
+		font-weight: normal;
+		font-size: 12px;
+		box-shadow: 0 0 2px #d94518;
+		cursor: pointer;
+	}
+	#color-code-finder .search-box:not(:valid) ~ .close-icon {
+		display: none;
+	}
     </style>
   </head>
 </html>
